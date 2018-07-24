@@ -1,0 +1,17 @@
+name: bus-stack 
+version: '1.2.0' 
+summary: motebus engine, the "BusStack" snap
+description: the motebus protocol engine
+grade: stable
+confinement: devmode
+
+apps:
+  BusStack:
+    command: BusStack
+    daemon: simple
+    stop-command: sudo pkill BusStack
+
+parts:
+  engine:
+    plugin: dump
+    source: .
